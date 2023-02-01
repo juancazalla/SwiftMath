@@ -53,13 +53,13 @@ class MTFontMathTable {
     let kConstants = "constants"
     
     /** MU unit in points */
-    var muUnit:CGFloat { _fontSize/18 }
+    var muUnit: CGFloat { _fontSize / 18 }
     
-    func fontUnitsToPt(_ fontUnits:Int) -> CGFloat {
+    func fontUnitsToPt(_ fontUnits: Int) -> CGFloat {
         CGFloat(fontUnits) * _fontSize / CGFloat(_unitsPerEm)
     }
     
-    init(withFont font: MTFont?, mathTable:NSDictionary) {
+    init(withFont font: MTFont?, mathTable: NSDictionary) {
         assert(font != nil, "font has nil value")
         assert(font!.ctFont != nil, "font.ctFont has nil value")
         self.font = font
@@ -122,65 +122,65 @@ class MTFontMathTable {
     var stackDisplayStyleGapMin:CGFloat { constantFromTable("StackDisplayStyleGapMin")  }                       // 7 \xi_8 in TeX
     var stackGapMin:CGFloat { constantFromTable("StackGapMin")  }                                   // 3 \xi_8 in TeX
     var stackBottomDisplayStyleShiftDown:CGFloat { constantFromTable("StackBottomDisplayStyleShiftDown")  }              // \sigma_11 in TeX
-    var stackBottomShiftDown:CGFloat { constantFromTable("StackBottomShiftDown")  } // \sigma_12 in TeX
+    var stackBottomShiftDown: CGFloat { constantFromTable("StackBottomShiftDown")  } // \sigma_12 in TeX
 
-   var stretchStackBottomShiftDown:CGFloat { constantFromTable("StretchStackBottomShiftDown") }
-   var stretchStackGapAboveMin:CGFloat { constantFromTable("StretchStackGapAboveMin") }
-   var stretchStackGapBelowMin:CGFloat { constantFromTable("StretchStackGapBelowMin") }
-   var stretchStackTopShiftUp:CGFloat { constantFromTable("StretchStackTopShiftUp") }
+    var stretchStackBottomShiftDown: CGFloat { constantFromTable("StretchStackBottomShiftDown") }
+    var stretchStackGapAboveMin: CGFloat { constantFromTable("StretchStackGapAboveMin") }
+    var stretchStackGapBelowMin: CGFloat { constantFromTable("StretchStackGapBelowMin") }
+    var stretchStackTopShiftUp: CGFloat { constantFromTable("StretchStackTopShiftUp") }
     
     // MARK: - super/sub scripts
 
-    var superscriptShiftUp:CGFloat { constantFromTable("SuperscriptShiftUp")  }                            // \sigma_13, \sigma_14 in TeX
-    var superscriptShiftUpCramped:CGFloat { constantFromTable("SuperscriptShiftUpCramped")  }                     // \sigma_15 in TeX
-    var subscriptShiftDown:CGFloat { constantFromTable("SubscriptShiftDown")  }                            // \sigma_16, \sigma_17 in TeX
-    var superscriptBaselineDropMax:CGFloat { constantFromTable("SuperscriptBaselineDropMax")  }                    // \sigma_18 in TeX
-    var subscriptBaselineDropMin:CGFloat { constantFromTable("SubscriptBaselineDropMin")  }                      // \sigma_19 in TeX
-    var superscriptBottomMin:CGFloat { constantFromTable("SuperscriptBottomMin")  }                          // 1/4 \sigma_5 in TeX
-    var subscriptTopMax:CGFloat { constantFromTable("SubscriptTopMax")  }                               // 4/5 \sigma_5 in TeX
-    var subSuperscriptGapMin:CGFloat { constantFromTable("SubSuperscriptGapMin")  }                          // 4 \xi_8 in TeX
-    var superscriptBottomMaxWithSubscript:CGFloat { constantFromTable("SuperscriptBottomMaxWithSubscript")  }             // 4/5 \sigma_5 in TeX
+    var superscriptShiftUp: CGFloat { constantFromTable("SuperscriptShiftUp")  }                            // \sigma_13, \sigma_14 in TeX
+    var superscriptShiftUpCramped: CGFloat { constantFromTable("SuperscriptShiftUpCramped")  }                     // \sigma_15 in TeX
+    var subscriptShiftDown: CGFloat { constantFromTable("SubscriptShiftDown")  }                            // \sigma_16, \sigma_17 in TeX
+    var superscriptBaselineDropMax: CGFloat { constantFromTable("SuperscriptBaselineDropMax")  }                    // \sigma_18 in TeX
+    var subscriptBaselineDropMin: CGFloat { constantFromTable("SubscriptBaselineDropMin")  }                      // \sigma_19 in TeX
+    var superscriptBottomMin: CGFloat { constantFromTable("SuperscriptBottomMin")  }                          // 1/4 \sigma_5 in TeX
+    var subscriptTopMax: CGFloat { constantFromTable("SubscriptTopMax")  }                               // 4/5 \sigma_5 in TeX
+    var subSuperscriptGapMin: CGFloat { constantFromTable("SubSuperscriptGapMin")  }                          // 4 \xi_8 in TeX
+    var superscriptBottomMaxWithSubscript: CGFloat { constantFromTable("SuperscriptBottomMaxWithSubscript")  }             // 4/5 \sigma_5 in TeX
 
-    var spaceAfterScript:CGFloat { constantFromTable("SpaceAfterScript")  }
+    var spaceAfterScript: CGFloat { constantFromTable("SpaceAfterScript")  }
 
     // MARK: - radicals
-    var radicalExtraAscender:CGFloat { constantFromTable("RadicalExtraAscender")  }                          // \xi_8 in Tex
-    var radicalRuleThickness:CGFloat { constantFromTable("RadicalRuleThickness")  }                          // \xi_8 in Tex
-    var radicalDisplayStyleVerticalGap:CGFloat { constantFromTable("RadicalDisplayStyleVerticalGap")  }                // \xi_8 + 1/4 \sigma_5 in Tex
-    var radicalVerticalGap:CGFloat { constantFromTable("RadicalVerticalGap")  }                            // 5/4 \xi_8 in Tex
-    var radicalKernBeforeDegree:CGFloat { constantFromTable("RadicalKernBeforeDegree")  }                       // 5 mu in Tex
-    var radicalKernAfterDegree:CGFloat { constantFromTable("RadicalKernAfterDegree")  }                        // -10 mu in Tex
-    var radicalDegreeBottomRaisePercent:CGFloat { percentFromTable("RadicalDegreeBottomRaisePercent")  }               // 60% in Tex
+    var radicalExtraAscender: CGFloat { constantFromTable("RadicalExtraAscender")  }                          // \xi_8 in Tex
+    var radicalRuleThickness: CGFloat { constantFromTable("RadicalRuleThickness")  }                          // \xi_8 in Tex
+    var radicalDisplayStyleVerticalGap: CGFloat { constantFromTable("RadicalDisplayStyleVerticalGap")  }                // \xi_8 + 1/4 \sigma_5 in Tex
+    var radicalVerticalGap: CGFloat { constantFromTable("RadicalVerticalGap")  }                            // 5/4 \xi_8 in Tex
+    var radicalKernBeforeDegree: CGFloat { constantFromTable("RadicalKernBeforeDegree")  }                       // 5 mu in Tex
+    var radicalKernAfterDegree: CGFloat { constantFromTable("RadicalKernAfterDegree")  }                        // -10 mu in Tex
+    var radicalDegreeBottomRaisePercent: CGFloat { percentFromTable("RadicalDegreeBottomRaisePercent")  }               // 60% in Tex
 
     // MARK: - Limits
-    var upperLimitBaselineRiseMin:CGFloat { constantFromTable("UpperLimitBaselineRiseMin")  }                     // \xi_11 in TeX
-    var upperLimitGapMin:CGFloat { constantFromTable("UpperLimitGapMin")  }                              // \xi_9 in TeX
-    var lowerLimitGapMin:CGFloat { constantFromTable("LowerLimitGapMin")  }                              // \xi_10 in TeX
-    var lowerLimitBaselineDropMin:CGFloat { constantFromTable("LowerLimitBaselineDropMin")  }                     // \xi_12 in TeX
-    var limitExtraAscenderDescender:CGFloat { 0 }                   // \xi_13 in TeX, not present in OpenType so we always set it to 0.
+    var upperLimitBaselineRiseMin: CGFloat { constantFromTable("UpperLimitBaselineRiseMin")  }                     // \xi_11 in TeX
+    var upperLimitGapMin: CGFloat { constantFromTable("UpperLimitGapMin")  }                              // \xi_9 in TeX
+    var lowerLimitGapMin: CGFloat { constantFromTable("LowerLimitGapMin")  }                              // \xi_10 in TeX
+    var lowerLimitBaselineDropMin: CGFloat { constantFromTable("LowerLimitBaselineDropMin")  }                     // \xi_12 in TeX
+    var limitExtraAscenderDescender: CGFloat { 0 }                   // \xi_13 in TeX, not present in OpenType so we always set it to 0.
 
     // MARK: - Underline
-    var underbarVerticalGap:CGFloat { constantFromTable("UnderbarVerticalGap")  }                           // 3 \xi_8 in TeX
-    var underbarRuleThickness:CGFloat { constantFromTable("UnderbarRuleThickness")  }                         // \xi_8 in TeX
-    var underbarExtraDescender:CGFloat { constantFromTable("UnderbarExtraDescender")  }                        // \xi_8 in TeX
+    var underbarVerticalGap: CGFloat { constantFromTable("UnderbarVerticalGap")  }                           // 3 \xi_8 in TeX
+    var underbarRuleThickness: CGFloat { constantFromTable("UnderbarRuleThickness")  }                         // \xi_8 in TeX
+    var underbarExtraDescender: CGFloat { constantFromTable("UnderbarExtraDescender")  }                        // \xi_8 in TeX
 
     // MARK: - Overline
-    var overbarVerticalGap:CGFloat { constantFromTable("OverbarVerticalGap")  }                            // 3 \xi_8 in TeX
-    var overbarRuleThickness:CGFloat { constantFromTable("OverbarRuleThickness")  }                          // \xi_8 in TeX
-    var overbarExtraAscender:CGFloat { constantFromTable("OverbarExtraAscender")  }                          // \xi_8 in TeX
+    var overbarVerticalGap: CGFloat { constantFromTable("OverbarVerticalGap")  }                            // 3 \xi_8 in TeX
+    var overbarRuleThickness: CGFloat { constantFromTable("OverbarRuleThickness")  }                          // \xi_8 in TeX
+    var overbarExtraAscender: CGFloat { constantFromTable("OverbarExtraAscender")  }                          // \xi_8 in TeX
 
     // MARK: - Constants
 
-    var axisHeight:CGFloat { constantFromTable("AxisHeight")  }                                    // \sigma_22 in TeX
-    var scriptScaleDown:CGFloat { percentFromTable("ScriptPercentScaleDown")  }
-    var scriptScriptScaleDown:CGFloat { percentFromTable("ScriptScriptPercentScaleDown")  }
-    var mathLeading:CGFloat { constantFromTable("MathLeading")  }
-    var delimitedSubFormulaMinHeight:CGFloat { constantFromTable("DelimitedSubFormulaMinHeight")  }
+    var axisHeight: CGFloat { constantFromTable("AxisHeight")  }                                    // \sigma_22 in TeX
+    var scriptScaleDown: CGFloat { percentFromTable("ScriptPercentScaleDown")  }
+    var scriptScriptScaleDown: CGFloat { percentFromTable("ScriptScriptPercentScaleDown")  }
+    var mathLeading: CGFloat { constantFromTable("MathLeading")  }
+    var delimitedSubFormulaMinHeight: CGFloat { constantFromTable("DelimitedSubFormulaMinHeight")  }
 
     // MARK: - Accent
 
-    var accentBaseHeight:CGFloat { constantFromTable("AccentBaseHeight")  } // \fontdimen5 in TeX (x-height)
-    var flattenedAccentBaseHeight:CGFloat { constantFromTable("FlattenedAccentBaseHeight")  }
+    var accentBaseHeight: CGFloat { constantFromTable("AccentBaseHeight")  } // \fontdimen5 in TeX (x-height)
+    var flattenedAccentBaseHeight: CGFloat { constantFromTable("FlattenedAccentBaseHeight")  }
     
     // MARK: - Variants
     
@@ -318,6 +318,4 @@ class MTFontMathTable {
         }
         return rv
     }
-
-    
 }

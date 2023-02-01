@@ -1275,13 +1275,13 @@ class MTTypesetter {
             // Create a regular node
             let line = NSMutableAttributedString(string: op.nucleus)
             // add the font
-            line.addAttribute(kCTFontAttributeName as NSAttributedString.Key, value:styleFont.ctFont!, range:NSMakeRange(0, line.length))
+            line.addAttribute(kCTFontAttributeName as NSAttributedString.Key, value: styleFont.ctFont, range: NSMakeRange(0, line.length))
             let displayAtom = MTCTLineDisplay(withString: line, position: currentPosition, range: op.indexRange, font: styleFont, atoms: [op])
-            return self.addLimitsToDisplay(displayAtom, forOperator:op, delta:0)
+            return self.addLimitsToDisplay(displayAtom, forOperator: op, delta: 0)
         }
     }
     
-    func addLimitsToDisplay(_ display:MTDisplay?, forOperator op:MTLargeOperator, delta:CGFloat) -> MTDisplay? {
+    func addLimitsToDisplay(_ display: MTDisplay?, forOperator op: MTLargeOperator, delta: CGFloat) -> MTDisplay? {
         // If there is no subscript or superscript, just return the current display
         if op.subScript == nil && op.superScript == nil {
             currentPosition.x += display!.width

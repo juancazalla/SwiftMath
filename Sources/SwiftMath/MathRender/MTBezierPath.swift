@@ -19,7 +19,7 @@ extension MTBezierPath {
 
 extension MTView {
     
-    var backgroundColor:MTColor? {
+    var backgroundColor: MTColor? {
         get {
             MTColor(cgColor: self.layer?.backgroundColor ?? MTColor.clear.cgColor)
         }
