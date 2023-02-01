@@ -32,7 +32,7 @@ public typealias MTBezierPath = NSBezierPath
 public typealias MTEdgeInsets = NSEdgeInsets
 public typealias MTRect = NSRect
 
-let MTEdgeInsetsZero = NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+let MTEdgeInsetsZero = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 func MTGraphicsGetCurrentContext() -> CGContext? { NSGraphicsContext.current?.cgContext }
 
 #endif

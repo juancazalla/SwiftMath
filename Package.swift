@@ -2,7 +2,6 @@
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
-import CoreGraphics
 
 let package = Package(
     name: "SwiftMath",
@@ -12,7 +11,8 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "SwiftMath",
-            targets: ["SwiftMath"]),
+            targets: ["SwiftMath"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -25,10 +25,12 @@ let package = Package(
             name: "SwiftMath",
             dependencies: [],
             resources: [
-                .copy("mathFonts.bundle")
-            ]),
+                .copy("mathFonts.bundle"),
+            ]
+        ),
         .testTarget(
             name: "SwiftMathTests",
-            dependencies: ["SwiftMath"]),
+            dependencies: ["SwiftMath"]
+        ),
     ]
 )

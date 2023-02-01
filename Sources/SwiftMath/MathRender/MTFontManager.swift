@@ -10,12 +10,11 @@
 import Foundation
 
 public class MTFontManager {
-    
-    static public var shared: MTFontManager = MTFontManager()
-    
+    public static var shared: MTFontManager = .init()
+
     private let kDefaultFontSize = CGFloat(20)
     private var nameToFontMap = [String: MTFont]()
-    
+
     public func font(withName name: String, size: CGFloat) -> MTFont? {
         let font: MTFont?
         if let cachedFont = nameToFontMap[name] {
@@ -31,19 +30,19 @@ public class MTFontManager {
             return font?.copy(withSize: size)
         }
     }
-    
+
     public func latinModernFont(withSize size: CGFloat) -> MTFont? {
         font(withName: "latinmodern-math", size: size)
     }
-    
+
     public func xitsFont(withSize size: CGFloat) -> MTFont? {
         font(withName: "xits-math", size: size)
     }
-    
+
     public func termesFont(withSize size: CGFloat) -> MTFont? {
         font(withName: "texgyretermes-math", size: size)
     }
-    
+
     public var defaultFont: MTFont? {
         latinModernFont(withSize: kDefaultFontSize)
     }

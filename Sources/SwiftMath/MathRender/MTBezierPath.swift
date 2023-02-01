@@ -13,23 +13,20 @@ import Foundation
 
 extension MTBezierPath {
     func addLine(to point: CGPoint) {
-        self.line(to: point)
+        line(to: point)
     }
 }
 
 extension MTView {
-    
     var backgroundColor: MTColor? {
         get {
-            MTColor(cgColor: self.layer?.backgroundColor ?? MTColor.clear.cgColor)
+            MTColor(cgColor: layer?.backgroundColor ?? MTColor.clear.cgColor)
         }
         set {
-            self.layer?.backgroundColor = MTColor.clear.cgColor
-            self.wantsLayer = true
+            layer?.backgroundColor = MTColor.clear.cgColor
+            wantsLayer = true
         }
     }
-    
 }
 
 #endif
-
