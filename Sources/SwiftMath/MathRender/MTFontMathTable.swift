@@ -61,7 +61,6 @@ class MTFontMathTable {
     
     init(withFont font: MTFont?, mathTable: NSDictionary) {
         assert(font != nil, "font has nil value")
-        assert(font!.ctFont != nil, "font.ctFont has nil value")
         self.font = font
         // do domething with font
         _unitsPerEm = UInt(CTFontGetUnitsPerEm(font!.ctFont))
