@@ -208,8 +208,7 @@ public class MTMathUILabel : MTView {
         _fontSize = 20
         _contentInsets = MTEdgeInsetsZero
         _labelMode = .display
-        let font = MTFontManager.fontManager.defaultFont
-        self.font = font
+        self.font = MTFontManager.shared.defaultFont
         _textAlignment = .left
         _displayList = nil
         displayErrorInline = true
